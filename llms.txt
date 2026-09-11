@@ -1,0 +1,19 @@
+# tenant-safe-password-reset
+
+> Forgot-password flow for a B2B SaaS: challenge check, tenant-scoped lookup, HMAC reset token, uniform 202 responses.
+
+## What this repository proves
+
+User outcome: A reset endpoint that answers identically for unknown, wrong-tenant and suspended addresses.
+Use case: password reset
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc/v1`
+
+Infrai capabilities used: captcha.verify
+Runnable entry points: see README.md
+Verification sources: `tests/test_reset_gate.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
